@@ -475,4 +475,18 @@ function dragElement(elmnt) {
     document.onmousemove = null;
     document.onmouseup = null;
   }
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "F11") {
+      var dica = document.getElementById("dica");
+      if (dica) {
+        dica.style.display = "none";
+      }
+    }
+  });
+  document.getElementById("sairDicas").addEventListener("click", function () {
+    var dica = document.getElementById("dica");
+    if (dica) {
+      dica.style.display = "none";
+    }
+  });
 }
