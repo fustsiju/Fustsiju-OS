@@ -397,11 +397,11 @@ document.getElementById("maximizarLol").addEventListener("click", function () {
     lolMain.style.top = "30px";
   }
   if (!maximizedLol) {
-      lolMain.style.width = "80%";
-      lolMain.style.height = "90vh";
-      lolMain.style.left = "50px";
-      lolMain.style.top = "50px";
-      lolMain.style.paddingBottom = "50px";
+    lolMain.style.width = "80%";
+    lolMain.style.height = "90vh";
+    lolMain.style.left = "50px";
+    lolMain.style.top = "50px";
+    lolMain.style.paddingBottom = "50px";
   }
 });
 
@@ -488,5 +488,28 @@ function dragElement(elmnt) {
     if (dica) {
       dica.style.display = "none";
     }
+  });
+  document.getElementById("config").addEventListener("click", function () {
+    var configTab = document.getElementById("configTab");
+    if (configTab.style.display === "none") {
+      configTab.style.display = "block";
+    } else {
+      configTab.style.display = "none";
+    }
+  });
+  document.getElementById("buttonBlack").addEventListener("click", function () {
+    document.body.style.backgroundColor = "black";
+  });
+  document.getElementById("buttonWhite").addEventListener("click", function () {
+    document.body.style.backgroundColor = "white";
+  });
+  document.getElementById("buttonRed").addEventListener("click", function () {
+    document.body.style.backgroundColor = "red";
+  });
+  document.getElementById("buttonGreen").addEventListener("click", function () {
+    document.body.style.backgroundColor = "green";
+  });
+  document.getElementById("buttonBlue").addEventListener("click", function () {
+    document.body.style.backgroundColor = "blue";
   });
 }

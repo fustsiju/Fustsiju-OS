@@ -24,8 +24,8 @@ body {
   overflow: hidden;
 }
 
-#dica{
-  position:absolute;
+#dica {
+  position: absolute;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
@@ -42,6 +42,7 @@ body {
   transition: opacity 0.3s ease-in-out;
   opacity: 0.8;
 }
+
 #sairDicas {
   position: absolute;
   top: 5px;
@@ -53,10 +54,12 @@ body {
   padding: 1px;
   background-color: var(--accent);
 }
+
 #sairDicas:hover {
   transform: scale(1.2);
   background-color: red;
 }
+
 #top-bar {
   position: fixed;
   top: 0;
@@ -71,11 +74,13 @@ body {
   z-index: 1000;
   border-bottom: 2px solid var(--accent);
 }
+
 #top-bar .top-bar-text {
   font-size: 14px;
   font-weight: bold;
   font-family: "Perfect DOS VGA", monospace;
 }
+
 #top-bar .top-bar-icons {
   display: flex;
   align-items: center;
@@ -83,6 +88,7 @@ body {
   padding-right: 10px;
   border-left: 2px solid var(--accent);
 }
+
 #top-bar .top-bar-icons img {
   width: 16px;
   height: 16px;
@@ -90,9 +96,11 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 #top-bar .top-bar-icons img:hover {
   transform: scale(1.2);
 }
+
 #top-bar #date {
   position: fixed;
   left: 50%;
@@ -125,6 +133,7 @@ body {
   border-bottom: 2px solid var(--accent);
   backdrop-filter: blur(2px);
 }
+
 .nav a {
   color: var(--text-main);
   margin: 0 35px;
@@ -145,14 +154,46 @@ body {
   margin-right: 10px;
 }
 
+#configTab {
+  position: fixed;
+  top: 30px;
+  right: 0;
+  width: 300px;
+  min-height: 150px;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  border: 2px solid var(--accent);
+  border-top: none;
+  padding: 20px;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.color-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+#configTab hr {
+  border: none;
+  border-top: 1px solid var(--accent);
+}
+
 @font-face {
   font-family: Perfect DOS VGA;
   src: url(//dl.dropbox.com/s/p3t4yi7hts3mt8j/Perfect%20DOS%20VGA%20437.ttf);
 }
+
 @font-face {
   font-family: Pixel Mix;
   src: url(//dl.dropbox.com/s/ouopdl0cvr66pv0/pixelmix.ttf);
 }
+
 @font-face {
   font-family: pix M 8pt;
   src: url(//dl.dropbox.com/s/c1lidj2je4fkyaa/M%208pt.ttf);
@@ -200,6 +241,7 @@ header {
   height: 40px;
   width: 40px;
 }
+
 .program span {
   display: block;
   text-align: center;
@@ -207,6 +249,7 @@ header {
   color: #fafafa;
   margin-top: 15px;
 }
+
 #notas {
   position: absolute;
   left: 10px;
@@ -218,16 +261,19 @@ header {
   left: 10px;
   top: 150px;
 }
+
 #velha {
   position: absolute;
   left: 10px;
   top: 250px;
 }
+
 #cobrinha {
   position: absolute;
   left: 10px;
   top: 350px;
 }
+
 #busca {
   position: absolute;
   left: 15px;
@@ -266,6 +312,7 @@ header {
   background-color: #f1f1f1;
   color: #000000;
 }
+
 .ascii-art {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -275,6 +322,7 @@ header {
   max-height: 500px;
   overflow: auto;
 }
+
 .ascii-art p {
   position: static;
   left: 100px;
@@ -283,6 +331,7 @@ header {
   color: #000000;
   margin-top: 40px;
 }
+
 #skills h2 {
   position: static;
   font-family: "Perfect DOS VGA", monospace;
@@ -290,6 +339,7 @@ header {
   color: #000000;
   margin-top: 30px;
 }
+
 #skills {
   /*h2 on first column and p on second, 2 times*/
   display: grid;
@@ -297,6 +347,7 @@ header {
   grid-template-rows: auto;
   margin: 0px 40px 40px 0px;
 }
+
 #memoriaMain {
   display: none;
   position: absolute;
@@ -309,6 +360,7 @@ header {
   resize: none;
   overflow: hidden;
 }
+
 #memoriaHeader {
   padding: 10px;
   cursor: move;
@@ -316,6 +368,7 @@ header {
   color: #000000;
   border-bottom: 1px solid black;
 }
+
 #velhaMain {
   display: none;
   position: absolute;
@@ -328,6 +381,7 @@ header {
   resize: none;
   overflow: hidden;
 }
+
 #velhaHeader {
   padding: 10px;
   cursor: move;
@@ -335,6 +389,7 @@ header {
   color: #000000;
   border-bottom: 1px solid black;
 }
+
 #cobrinhaMain {
   display: none;
   position: absolute;
@@ -347,6 +402,7 @@ header {
   resize: none;
   overflow: hidden;
 }
+
 #cobrinhaHeader {
   padding: 10px;
   cursor: move;
@@ -354,6 +410,7 @@ header {
   color: #000000;
   border-bottom: 1px solid black;
 }
+
 #buscaMain {
   display: none;
   position: absolute;
@@ -366,6 +423,7 @@ header {
   resize: none;
   overflow: hidden;
 }
+
 #buscaHeader {
   padding: 10px;
   cursor: move;
@@ -373,6 +431,7 @@ header {
   color: #000000;
   border-bottom: 1px solid black;
 }
+
 #lolMain {
   display: none;
   position: absolute;
@@ -385,6 +444,7 @@ header {
   resize: none;
   overflow: hidden;
 }
+
 #lolHeader {
   padding: 10px;
   cursor: move;
@@ -392,6 +452,7 @@ header {
   color: #000000;
   border-bottom: 1px solid black;
 }
+
 .memoria-iframe,
 .velha-iframe,
 .cobrinha-iframe,
@@ -406,6 +467,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .memoria-iframe iframe,
 .velha-iframe iframe,
 .cobrinha-iframe iframe,
@@ -425,6 +487,7 @@ header {
   height: 16px;
   margin-right: 10px;
 }
+
 .title span {
   display: inline;
   margin-left: 7px;
@@ -471,9 +534,11 @@ article {
   display: flex;
   flex-flow: row wrap;
 }
+
 .ribbon span {
   display: block;
 }
+
 .ribbon span:first-letter {
   text-decoration: underline;
 }
@@ -500,10 +565,12 @@ button:focus span {
   background: #c0f0ff;
   box-shadow: 0px 0px 5px #80e1ff;
 }
+
 @keyframes loadin {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -539,6 +606,7 @@ canvas {
     width: 75%;
   }
 }
+
 @media screen and (max-width: 360px) {
   .title span {
     display: none;
