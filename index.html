@@ -2,31 +2,59 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fustsiju</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="script.js" defer></script>
-<body>
-      <div id="top-bar">
-    <img src="./Imagens/logo.png" id="logo">
-    <span class="top-bar-text">Fustsiju OS</span>
-            <span id="date"></span>
-    <div class="top-bar-icons">
-      <img src="./Imagens/computer.png" alt="Start">
-      <img src="./Imagens/search.png" alt="Search">
-      <img src="./Imagens/bell.png" alt="Notification">
-        <img src="./Imagens/power.png" alt="Battery">
-        <img src="./Imagens/wireless-connectivity.png" alt="WiFi">
-        <img src="./Imagens/speaker.png" alt="Volume">
-    </div>
-  </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fustsiju</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js" defer></script>
 
-  <div id="particles-js"></div>
+<body>
+    <div id="top-bar">
+        <img src="./Imagens/logo.png" id="logo">
+        <span class="top-bar-text">Fustsiju OS</span>
+        <span id="date">
+            <script>  var dateElement = document.getElementById("date");
+                if (dateElement) {
+                    var mediaQuery = window.matchMedia("(max-width: 600px)");
+                    function handleMediaChange(e) {
+                        if (e.matches) {
+                            var currentDate = new Date();
+                            dateElement.textContent =
+                                currentDate.getDate() +
+                                "/" +
+                                (currentDate.getMonth() + 1) +
+                                "/" +
+                                currentDate.getFullYear();
+                        } else {
+                            document.getElementById("date").textContent = new Date().toLocaleDateString('pt-BR', {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            });
+                        }
+                    }
+                    mediaQuery.addEventListener("change", handleMediaChange);
+                    handleMediaChange(mediaQuery);
+                }</script>
+        </span>
+        <div class="top-bar-icons">
+            <img src="./Imagens/computer.png" alt="Start">
+            <img src="./Imagens/search.png" alt="Search">
+            <img src="./Imagens/bell.png" alt="Notification">
+            <img src="./Imagens/power.png" alt="Battery">
+            <img src="./Imagens/wireless-connectivity.png" alt="WiFi">
+            <img src="./Imagens/speaker.png" alt="Volume">
+        </div>
+    </div>
+
+    <div id="particles-js"></div>
 
     <div class="workspace">
         <div class="program" id="notas">
@@ -50,186 +78,202 @@
             <span>Busca</span>
         </div>
         <div class="program" id="lol">
-            <img src="./Imagens/lolimage.png"  alt="Program 6">
+            <img src="./Imagens/lolimage.png" alt="Program 6">
             <span>LoL</span>
         </div>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<main>
-<div id="notasMain">
-	<header id="notasHeader">
-		<div class="title">
-			<img src="//dl.dropbox.com/s/k1nz4rogdwjyeq6/windows_95_notepad.svg"> fustsiju.txt
-			<span>- Bloco de Notas</span>
-		</div>
-		<div class="svgs">
-			<img id="minimizarNotas" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-			<img id="maximizarNotas" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-			<img id="sairNotas" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-		</div>
-	</header>
-	<div class="ribbon">
-		<button class="tablinks" onclick="openTab(event, 'Section 1')" id="defaultOpen"><span>Home</span></button>
-		<button class="tablinks" onclick="openTab(event, 'Section 2')"><span>About</span></button>
-		<button class="tablinks" onclick="openTab(event, 'Section 3')"><span>Skills</span></button>
-	</div>
-	<article id="Section 1" class="tabcontent">
-        <h1 id="me">Welcome</h1></br>
-            <p></p>
-            <p>I am a Developer</p></br>
-            <p>When I entered high school, I had the privilege of studying Information Technology in an integrated program. 
-                There, I was exposed to new possibilities and gained a deeper understanding of the fundamentals and applications of various programming languages,
-                 as well as computer assembly and maintenance.</br></br>
-                Since then, I’ve never stopped using computers — or questioning how certain technologies work. 
-                I believe that curiosity is the bridge between convenience and technological advancement. 
-                As long as there are people who ask questions, there will always be new technologies and new opportunities.
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <main>
+            <div id="notasMain">
+                <header id="notasHeader">
+                    <div class="title">
+                        <img src="//dl.dropbox.com/s/k1nz4rogdwjyeq6/windows_95_notepad.svg"> fustsiju.txt
+                        <span>- Bloco de Notas</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarNotas" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarNotas" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairNotas" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="ribbon">
+                    <button class="tablinks" onclick="openTab(event, 'Section 1')"
+                        id="defaultOpen"><span>Home</span></button>
+                    <button class="tablinks" onclick="openTab(event, 'Section 2')"><span>About</span></button>
+                    <button class="tablinks" onclick="openTab(event, 'Section 3')"><span>Skills</span></button>
+                </div>
+                <article id="Section 1" class="tabcontent">
+                    <h1 id="me">Welcome</h1></br>
+                    <p></p>
+                    <p>I am a Developer</p></br>
+                    <p>When I entered high school, I had the privilege of studying Information Technology in an
+                        integrated program.
+                        There, I was exposed to new possibilities and gained a deeper understanding of the fundamentals
+                        and applications of various programming languages,
+                        as well as computer assembly and maintenance.</br></br>
+                        Since then, I’ve never stopped using computers — or questioning how certain technologies work.
+                        I believe that curiosity is the bridge between convenience and technological advancement.
+                        As long as there are people who ask questions, there will always be new technologies and new
+                        opportunities.
 
-</p>
+                    </p>
 
-	</article>
-	<article id="Section 2" class="tabcontent">
-<h1 id="me">About me</h1></br>
+                </article>
+                <article id="Section 2" class="tabcontent">
+                    <h1 id="me">About me</h1></br>
 
-            <p>I discovered my love for technology as a child, I always asked how televisions worked and even how a lamp
-                could light up a hallway.
-                When I had my first computer, at the age of 7, I was able to start researching and understanding various
-                issues related to my daily life.
-                I spent hours in front of that old monitor and I could feel the static electricity that raised the hair
-                on my arms and shocked me when I touched a doorknob.
-                Since then, I haven't done anything other than have fun using the computer, I've made a lot of drawings
-                in paint, and I've visited a lot of random websites.</p></br>
-            <p>When I reached high school I had the merit of studying information technology in an integrated way, there
-                I was able to see new possibilities
-                and better understand the fundamentals and applications of different programming languages, as well as
-                computer assembly and maintenance.
-                Finally, I never stopped using the computer, much less wondering about how certain technologies work.
-                I believe that curiosity is the threshold between convenience and technological advancement. As long as
-                there are people who
-                question themselves, there will always be new technologies and new opportunities.</p>
+                    <p>I discovered my love for technology as a child, I always asked how televisions worked and even
+                        how a lamp
+                        could light up a hallway.
+                        When I had my first computer, at the age of 7, I was able to start researching and understanding
+                        various
+                        issues related to my daily life.
+                        I spent hours in front of that old monitor and I could feel the static electricity that raised
+                        the hair
+                        on my arms and shocked me when I touched a doorknob.
+                        Since then, I haven't done anything other than have fun using the computer, I've made a lot of
+                        drawings
+                        in paint, and I've visited a lot of random websites.</p></br>
+                    <p>When I reached high school I had the merit of studying information technology in an integrated
+                        way, there
+                        I was able to see new possibilities
+                        and better understand the fundamentals and applications of different programming languages, as
+                        well as
+                        computer assembly and maintenance.
+                        Finally, I never stopped using the computer, much less wondering about how certain technologies
+                        work.
+                        I believe that curiosity is the threshold between convenience and technological advancement. As
+                        long as
+                        there are people who
+                        question themselves, there will always be new technologies and new opportunities.</p>
 
 
-	</article>
-	<article id="Section 3" class="tabcontent">
-        <hr>
-            <div class="ascii-art">
-            <img src="./Imagens/ascii-art.png" alt="ASCII Art">
-            <p> ID da credencial: F81E44CB2AA1A08C<br>
+                </article>
+                <article id="Section 3" class="tabcontent">
+                    <hr>
+                    <div class="ascii-art">
+                        <img src="./Imagens/ascii-art.png" alt="ASCII Art">
+                        <p> ID da credencial: F81E44CB2AA1A08C<br>
 
-                Número da certificação: 554DA7-94062O<br>
+                            Número da certificação: 554DA7-94062O<br>
 
-                Obtido em: 26 de fevereiro de 2025<br>
+                            Obtido em: 26 de fevereiro de 2025<br>
 
-                Expira em: 26 de fevereiro de 2026</p></div><hr>
-            <div id="skills">
+                            Expira em: 26 de fevereiro de 2026</p>
+                    </div>
+                    <hr>
+                    <div id="skills">
                         <h2>Microsoft Certified: Azure Developer Associate</h2><br>
-                        <p>The AZ-204: Developing Solutions for Microsoft Azure certification exam validates the skills and
+                        <p>The AZ-204: Developing Solutions for Microsoft Azure certification exam validates the skills
+                            and
                             knowledge required to develop cloud-based solutions using Microsoft Azure.
                             The exam covers topics such as application development, storage implementation, security,
                             monitoring, troubleshooting,
                             and integration with Azure services and third-party services.</p>
 
-                        <br><h2>Skills measured:</h2><br>
+                        <br>
+                        <h2>Skills measured:</h2><br>
                         <p>Develop Azure compute solutions<br>
                             Develop for Azure Storage<br>
                             Implement Azure security<br>
                             Monitor, troubleshoot, and optimize Azure solutions<br>
                             Connect to and consume Azure and third-party services</p>
-        </div>
+                    </div>
 
-	</article>
-</div>
-<div id="memoriaMain">
-    <header id="memoriaHeader">
-        <div class="title">
-            <img src="https://cdn-icons-png.flaticon.com/128/882/882998.png"> Memória
-            <span>- Jogo da Memória</span>
-        </div>
-        <div class="svgs">
-            <img id="minimizarMemoria" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-            <img id="maximizarMemoria" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-            <img id="sairMemoria" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-        </div>
-    </header>
-    <div class="memoria-iframe">
-            <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%201%20-%20Mem%C3%B3ria/Desafio%201%20-%20Mem%C3%B3ria/Jogo%20da%20Mem%C3%B3ria/" 
-            frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<div id="velhaMain">
-    <header id="velhaHeader">
-        <div class="title">
-            <img src="https://cdn-icons-png.flaticon.com/128/2911/2911080.png"> Velha
-            <span>- Jogo da Velha</span>
-        </div>
-        <div class="svgs">
-            <img id="minimizarVelha" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-            <img id="maximizarVelha" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-            <img id="sairVelha" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-        </div>
-    </header>
-    <div class="velha-iframe">
-            <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%203%20-%20Jogo%20da%20velha/" 
-            frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<div id="cobrinhaMain">
-    <header id="cobrinhaHeader">
-        <div class="title">
-            <img src="https://cdn-icons-png.flaticon.com/128/8160/8160941.png"> Cobrinha
-            <span>- Jogo da Cobrinha</span>
-        </div>
-        <div class="svgs">
-            <img id="minimizarCobrinha" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-            <img id="maximizarCobrinha" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-            <img id="sairCobrinha" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-        </div>
-    </header>
-    <div class="cobrinha-iframe">
-            <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Jogo%20da%20cobrinha/" 
-            frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<div id="buscaMain">
-    <header id="buscaHeader">
-        <div class="title">
-            <img src="https://cdn-icons-png.flaticon.com/128/4297/4297818.png"> Busca
-            <span>- Pesquisa</span>
-        </div>
-        <div class="svgs">
-            <img id="minimizarBusca" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-            <img id="maximizarBusca" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-            <img id="sairBusca" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-        </div>
-    </header>
-    <div class="busca-iframe">
-            <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%202%20-%20Busca%20Estagiario/" 
-            frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-<div id="lolMain">
-    <header id="lolHeader">
-        <div class="title">
-            <img src="./Imagens/lolimage.png"> LoL
-            <span>- League of Legends</span>
-        </div>
-        <div class="svgs">
-            <img id="minimizarLol" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
-            <img id="maximizarLol" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
-            <img id="sairLol" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
-        </div>
-    </header>
-            <div class="lol-iframe">
-            <iframe src="https://fustsiju.github.io/Site-LOL/" 
-            frameborder="0" allowfullscreen></iframe>
-            
-        </div>
+                </article>
+            </div>
+            <div id="memoriaMain">
+                <header id="memoriaHeader">
+                    <div class="title">
+                        <img src="https://cdn-icons-png.flaticon.com/128/882/882998.png"> Memória
+                        <span>- Jogo da Memória</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarMemoria" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarMemoria" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairMemoria" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="memoria-iframe">
+                    <iframe
+                        src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%201%20-%20Mem%C3%B3ria/Desafio%201%20-%20Mem%C3%B3ria/Jogo%20da%20Mem%C3%B3ria/"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="velhaMain">
+                <header id="velhaHeader">
+                    <div class="title">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2911/2911080.png"> Velha
+                        <span>- Jogo da Velha</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarVelha" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarVelha" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairVelha" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="velha-iframe">
+                    <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%203%20-%20Jogo%20da%20velha/"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="cobrinhaMain">
+                <header id="cobrinhaHeader">
+                    <div class="title">
+                        <img src="https://cdn-icons-png.flaticon.com/128/8160/8160941.png"> Cobrinha
+                        <span>- Jogo da Cobrinha</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarCobrinha" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarCobrinha" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairCobrinha" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="cobrinha-iframe">
+                    <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Jogo%20da%20cobrinha/" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="buscaMain">
+                <header id="buscaHeader">
+                    <div class="title">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4297/4297818.png"> Busca
+                        <span>- Pesquisa</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarBusca" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarBusca" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairBusca" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="busca-iframe">
+                    <iframe src="https://fustsiju.github.io/Estagio-Full-Stack/Desafio%202%20-%20Busca%20Estagiario/"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="lolMain">
+                <header id="lolHeader">
+                    <div class="title">
+                        <img src="./Imagens/lolimage.png"> LoL
+                        <span>- League of Legends</span>
+                    </div>
+                    <div class="svgs">
+                        <img id="minimizarLol" src="//dl.dropbox.com/s/pj84glmeury2gg0/windows_95_minimize.svg">
+                        <img id="maximizarLol" src="//dl.dropbox.com/s/bjebqn1oeyf99g6/windows_95_fullscreen.svg">
+                        <img id="sairLol" src="//dl.dropbox.com/s/nm1j3k1k7n0s194/windows_95_close.svg">
+                    </div>
+                </header>
+                <div class="lol-iframe">
+                    <iframe src="https://fustsiju.github.io/Site-LOL/" frameborder="0" allowfullscreen></iframe>
 
-</div>
-</div>
-</main>
-</head> 
+                </div>
+
+            </div>
+    </div>
+    </main>
+    </head>
 </body>
 
 </html>

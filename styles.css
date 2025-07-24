@@ -493,7 +493,6 @@ footer {
 
 canvas {
   display: block;
-  vertical-align: bottom;
 }
 
 #particles-js {
