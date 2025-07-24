@@ -405,7 +405,6 @@ document.getElementById("maximizarLol").addEventListener("click", function () {
   }
 });
 
-//resize elements
 document.getElementById("minimizarLol").addEventListener("click", function () {
   var lolMain = document.getElementById("lolMain");
   if (lolMain) {
@@ -475,5 +474,30 @@ function dragElement(elmnt) {
   function stopResize() {
     document.onmousemove = null;
     document.onmouseup = null;
+  }
+
+  var dateElement = document.getElementById("date");
+  if (dateElement) {
+    var mediaQuery = window.matchMedia("(max-width: 600px)");
+    function handleMediaChange(e) {
+      if (e.matches) {
+        var currentDate = new Date();
+        dateElement.textContent =
+          currentDate.getDate() +
+          "/" +
+          (currentDate.getMonth() + 1) +
+          "/" +
+          currentDate.getFullYear();
+      } else {
+          document.getElementById("date").textContent = new Date().toLocaleDateString('pt-BR', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+          });
+      }
+    }
+    mediaQuery.addEventListener("change", handleMediaChange);
+    handleMediaChange(mediaQuery);
   }
 }
